@@ -125,21 +125,21 @@ function Promise(fn) {
   // 初始化 Promise 的状态
 
 
-  // 初始化延迟状态变量，用于处理异步逻辑
+  //! 初始化延迟状态变量，用于处理异步逻辑
   this._deferredState = 0;
-  // 初始化状态变量，用于表示当前状态
+  //! 初始化状态变量，用于表示当前状态
   this._state = 0;
-  // 初始化值变量，用于存储异步操作的结果
+  //! 初始化值变量，用于存储异步操作的结果
   this._value = null;
-  // 初始化延迟对象数组，用于存储等待执行的回调函数
+  //! 初始化延迟对象数组，用于存储等待执行的回调函数
   this._deferreds = null;
 
   // 如果 fn 是空函数，则直接返回，不做进一步操作
   if (fn === noop) return;
 
 
-  // 开始执行传入的 fn 函数，并传递当前 Promise 实例给 doResolve 函数  
-  // 初始化 resolve  ， reject 方法
+  // ! 开始执行传入的 fn 函数，并传递当前 Promise 实例给 doResolve 函数
+  //! 初始化 resolve  ， reject 方法
   doResolve(fn, this);
 }
 
@@ -481,7 +481,7 @@ function doResolve(fn, promise) {
   // 尝试执行 fn，并分别处理成功和失败的情况
   var res = tryCallTwo(fn,
 
-    // 代理 回调 resolve 方法
+    //! 代理 回调 resolve 方法
     function (value) {
       if (done) return;
       done = true;
@@ -489,7 +489,7 @@ function doResolve(fn, promise) {
       resolve(promise, value);
     },
 
-    // 代理 回调 reject 方法
+    //! 代理 回调 reject 方法
     function (reason) {
       if (done) return;
       done = true;
