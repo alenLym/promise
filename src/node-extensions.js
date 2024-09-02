@@ -1,7 +1,6 @@
 'use strict';
 
-// This file contains then/promise specific extensions that are only useful
-// for node.js interop
+// 此文件包含仅对 node.js 互操作有用的特定于 then/promise 的扩展
 
 var Promise = require('./core.js');
 var asap = require('asap');

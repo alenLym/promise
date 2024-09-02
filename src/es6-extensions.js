@@ -1,6 +1,6 @@
 'use strict';
 
-//This file contains the ES6 extensions to the core Promises/A+ API
+//此文件包含核心 Promises/A+ API 的 ES6 扩展
 
 var Promise = require('./core.js');
 
